@@ -1,0 +1,84 @@
+{
+  "name": "chat-fontsize",
+  "displayName": "Copilot Chat Font Size",
+  "description": "调整GitHub Copilot Chat面板的字体大小",
+  "version": "0.1.0",
+  "publisher": "yourpublishername",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Copilot Chat Font Size",
+      "properties": {
+        "copilotChatFontSize.fontSize": {
+          "type": "number",
+          "default": 14,
+          "minimum": 8,
+          "maximum": 30,
+          "description": "设置Copilot聊天面板的字体大小 (px)"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "copilot-chat-fontsize.increase",
+        "title": "Copilot Chat: 增加字体大小"
+      },
+      {
+        "command": "copilot-chat-fontsize.decrease",
+        "title": "Copilot Chat: 减小字体大小"
+      },
+      {
+        "command": "copilot-chat-fontsize.reset",
+        "title": "Copilot Chat: 重置字体大小"
+      },
+      {
+        "command": "copilot-chat-fontsize.showQuickPick",
+        "title": "Copilot Chat: 打开字体大小调整菜单"
+      },
+      {
+        "command": "copilot-chat-fontsize.showSlider",
+        "title": "Copilot Chat: 使用滑块调整字体大小"
+      },
+      {
+        "command": "copilot-chat-fontsize.settings",
+        "title": "Copilot Chat: 字体大小高级设置"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'Skipping lint'",
+    "lint": "echo 'Skipping lint'",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.70.0",
+    "eslint": "^8.40.0",
+    "vsce": "^2.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/chat-fontsize"
+  },
+  "keywords": [
+    "copilot",
+    "chat",
+    "font",
+    "size",
+    "custom-ui"
+  ],
+  "license": "MIT",
+  "extensionDependencies": [
+    "subframe7536.custom-ui-style"
+  ]
+}

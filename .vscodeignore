@@ -1,0 +1,10 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+.eslintrc.json
+.eslintignore
+vsc-extension-quickstart.md
+**/jsconfig.json
+**/*.map
+**/.git/**
+**/.github/**
