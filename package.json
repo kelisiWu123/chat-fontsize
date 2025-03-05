@@ -1,7 +1,7 @@
 {
-  "name": "chat-fontsize",
-  "displayName": "Copilot Chat Font Size",
-  "description": "调整GitHub Copilot Chat面板的字体大小",
+  "name": "cursor-chat-fontsize",
+  "displayName": "Cursor Chat Font Size Adjuster",
+  "description": "调整Cursor Chat面板的字体大小",
   "version": "0.1.0",
   "publisher": "yourpublishername",
   "engines": {
