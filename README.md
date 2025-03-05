@@ -1,17 +1,20 @@
 # Copilot Chat Font Size
 
-一个允许调整 GitHub Copilot Chat 面板字体大小的 VSCode 扩展。
+还在为 AI Editor 的字体大小而烦恼吗？试试这个扩展吧！
+一个允许调整 GitHub Copilot Chat 和 Cursor Chat 面板字体大小的 VSCode 扩展。
 
 ## 功能
 
-- 通过状态栏图标快速调整 Copilot Chat 的字体大小
+- 通过状态栏图标快速调整 AI 助手聊天面板字体大小
 - 提供图形界面进行直观的字体大小调整
 - 支持同时调整多个区域的字体大小
-- 字体大小立即生效
+- 支持 GitHub Copilot Chat 和 Cursor Chat 聊天界面
+- 字体大小重启后生效
+- 版本 1.0.0 正式发布
 
 ## 依赖
 
-此扩展可以单独使用，但为了获得更好的体验，建议安装 [Custom UI Style](https://marketplace.visualstudio.com/items?itemName=subframe7536.custom-ui-style) 扩展。
+此扩展必须搭配 [Custom UI Style](https://marketplace.visualstudio.com/items?itemName=subframe7536.custom-ui-style) 扩展。
 
 ## 使用方法
 
