@@ -71,12 +71,15 @@ This extension adjusts the font size in the following ways:
 
 ## Screenshots
 
-- Larger fonts make it easier to read code
-- Custom UI Style extension effect
-  ![Screenshot](./img/example/cursor.png)
+Larger fonts make it easier to read code.
 
-- Copilot Chat extension effect
-  ![Screenshot](./img/example/copilot.png)
+### Custom UI Style Extension Effect
+
+![Custom UI Style Effect](./img/example/cursor.png)
+
+### Copilot Chat Extension Effect
+
+![Copilot Chat Effect](./img/example/copilot.png)
 
 ## Feedback and Contributions
 
