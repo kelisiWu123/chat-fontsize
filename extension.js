@@ -170,7 +170,7 @@ async function showFontSizeQuickPick() {
       action: 'reset',
     },
     {
-      label: '$(sliders) 使用滑块调整',
+      label: '$(sliders) 精确调整',
       description: '精确设置字体大小',
       action: 'slider',
     },
