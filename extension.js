@@ -175,9 +175,9 @@ async function showFontSizeQuickPick() {
       action: 'slider',
     },
     {
-      label: '$(gear) 高级设置',
-      description: '配置不同区域的字体大小',
-      action: 'settings',
+      label: '$(sync) 同步所有字体大小',
+      description: '使用单一字体大小设置',
+      action: 'sync',
     },
   ]
 
@@ -200,8 +200,10 @@ async function showFontSizeQuickPick() {
       case 'slider':
         vscode.commands.executeCommand('copilot-chat-fontsize.showSlider')
         break
-      case 'settings':
-        vscode.commands.executeCommand('copilot-chat-fontsize.settings')
+      case 'sync':
+        // 同步两个设置的字体大小
+        await chatEditorConfig.update('fontSize', currentCustomSize, true)
+        vscode.window.showInformationMessage(`已同步所有字体大小为 ${currentCustomSize}px`)
         break
     }
   }
@@ -262,6 +264,8 @@ async function updateFontSize() {
     '.interactive-session-item': `font-size: ${fontSize}px !important;`, // 添加更多选择器以增加覆盖范围
     '.interactive-response': `font-size: ${fontSize}px !important;`,
     '.anysphere-markdown-container-root': `font-size: ${fontSize}px !important; line-height: 1.4;`, // 添加新选择器
+    // 新增：支持更多编辑器
+    '.monaco-editor.no-user-select .view-lines': 'font-size: 16px !important; line-height: 1.4;', // 新增样式规则
   }
 
   // 更新设置
@@ -274,25 +278,19 @@ async function updateFontSize() {
 async function showFontSettings() {
   const chatEditorConfig = vscode.workspace.getConfiguration('chat.editor')
   const customConfig = vscode.workspace.getConfiguration('copilotChatFontSize')
-  const currentEditorSize = chatEditorConfig.get('fontSize')
   const currentCustomSize = customConfig.get('fontSize')
 
   const items = [
     {
       label: '同步所有字体大小',
       description: '使用单一字体大小设置',
-      picked: currentEditorSize === currentCustomSize,
+      picked: true, // 默认选中
       action: 'sync',
     },
     {
-      label: `调整主要内容区域 (当前: ${currentCustomSize}px)`,
-      description: '通过Custom UI Style调整主要聊天区域',
-      action: 'main',
-    },
-    {
-      label: `调整编辑器区域 (当前: ${currentEditorSize}px)`,
-      description: '调整chat.editor.fontSize原生设置',
-      action: 'editor',
+      label: '$(gear) 高级设置',
+      description: '配置不同区域的字体大小',
+      action: 'settings',
     },
   ]
 
@@ -308,29 +306,10 @@ async function showFontSettings() {
         await chatEditorConfig.update('fontSize', currentCustomSize, true)
         vscode.window.showInformationMessage(`已同步所有字体大小为 ${currentCustomSize}px`)
         break
-      case 'main':
+      case 'settings':
+        // 处理高级设置
         showFontSizeSlider() // 调整主区域字体大小
         break
-      case 'editor': {
-        // 调整编辑器字体大小
-        const input = await vscode.window.showInputBox({
-          value: currentEditorSize.toString(),
-          prompt: '设置编辑器区域字体大小 (8-30px)',
-          validateInput: (value) => {
-            const size = parseInt(value)
-            if (isNaN(size) || size < 8 || size > 30) {
-              return '请输入8到30之间的数字'
-            }
-            return null
-          },
-        })
-        if (input !== undefined) {
-          const newSize = parseInt(input)
-          await chatEditorConfig.update('fontSize', newSize, true)
-          vscode.window.showInformationMessage(`编辑器区域字体大小已设置为 ${newSize}px`)
-        }
-        break
-      }
     }
   }
 }
