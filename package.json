@@ -3,8 +3,15 @@
   "displayName": "Cursor Chat Font Size Adjuster",
   "description": "调整Cursor Chat面板的字体大小",
   "version": "1.0.0",
-  "icon": "./img/icon/icon.png",
-  "publisher": "yourpublishername",
+  "icon": "img/icon/icon.png",
+  "publisher": "kelisiWu123",
+  "author": {
+    "name": "kelisiWu123"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kelisiWu123/chat-fontsize.git"
+  },
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -66,10 +73,6 @@
     "@types/vscode": "^1.70.0",
     "eslint": "^8.40.0",
     "vsce": "^2.15.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/chat-fontsize"
   },
   "keywords": [
     "copilot",
