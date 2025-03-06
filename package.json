@@ -4,7 +4,7 @@
   "description": "调整Cursor Chat面板的字体大小",
   "version": "1.0.0",
   "icon": "img/icon/icon.png",
-  "publisher": "kelisiWu123",
+  "publisher": "kelisiWu",
   "author": {
     "name": "kelisiWu123"
   },
@@ -21,6 +21,11 @@
   "activationEvents": [
     "onStartupFinished",
     "*"
+  ],
+  "files": [
+    "img/example/cursor.png",
+    "img/example/copilot.png",
+    "img/icon/icon.png"
   ],
   "main": "./extension.js",
   "contributes": {

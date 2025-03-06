@@ -75,11 +75,11 @@ Larger fonts make it easier to read code.
 
 ### Custom UI Style Extension Effect
 
-![Custom UI Style Effect](img/example/cursor.png)
+![Custom UI Style Effect](/img/example/cursor.png)
 
 ### Copilot Chat Extension Effect
 
-![Copilot Chat Effect](img/example/copilot.png)
+![Copilot Chat Effect](/img/example/copilot.png)
 
 ## Feedback and Contributions
 

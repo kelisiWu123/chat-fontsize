@@ -75,11 +75,11 @@
 
 ### Custom UI Style 扩展效果
 
-![Custom UI Style 效果截图](img/example/cursor.png)
+![Custom UI Style 效果截图](/img/example/copilot.png)
 
 ### Copilot Chat 扩展效果
 
-![Copilot Chat 效果截图](img/example/copilot.png)
+![Copilot Chat 效果截图](/img/example/cursor.png)
 
 ## 反馈和贡献
 
